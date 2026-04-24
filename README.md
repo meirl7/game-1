@@ -1,6 +1,8 @@
 # game-1
 
-Установить Git LFS
+Требуется:
+- Git LFS
+- Godot 4.6.2
 
 Если Linux (apt):
 ```bash
