@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://dh3uggbifr6m4"]
 
+[ext_resource type="PackedScene" uid="uid://bfpyy4my6buwj" path="res://scenes/player.tscn" id="1_o5qli"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_o5qli"]
+
 [node name="Main" type="Node" unique_id=318510330]
 
-[node name="Menu" type="Control" parent="." unique_id=1866744549]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="World" type="Node2D" parent="." unique_id=412490202]
+
+[node name="Player" parent="World" unique_id=259263366 instance=ExtResource("1_o5qli")]
+position = Vector2(767, 705)
+
+[node name="Ground" type="StaticBody2D" parent="World" unique_id=236893248]
+position = Vector2(771, 900)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Ground" unique_id=115037536]
+shape = SubResource("WorldBoundaryShape2D_o5qli")
